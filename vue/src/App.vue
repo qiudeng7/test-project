@@ -22,7 +22,7 @@ function click() {
       <img src="./assets/image.png" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <el-button type="danger" plain :onclick="click">Danger</el-button>
+  <el-button type="danger" :onclick="click">Danger</el-button>
   <HelloWorld msg="Vite + Vue" />
 
 </template>
