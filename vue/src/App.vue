@@ -1,5 +1,16 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import axios from 'axios'
+
+function click() {
+  axios({
+    method: 'get',
+    url: "/api/tianshu/hello/",
+  }).then((response) => {
+    console.log(response.data);
+  });
+}
+
 </script>
 
 <template>
@@ -11,9 +22,9 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/image.png" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  
+  <el-button type="danger" plain :onclick="click">Danger</el-button>
   <HelloWorld msg="Vite + Vue" />
-  
+
 </template>
 
 <style scoped>
@@ -23,9 +34,11 @@ import HelloWorld from './components/HelloWorld.vue'
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
 }
